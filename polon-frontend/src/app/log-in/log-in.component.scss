@@ -1,0 +1,56 @@
+// Font sizes
+$large: 2.5rem;
+$medium: 1.5rem;
+
+section {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header {
+        margin-bottom: 2rem;
+
+        h3 {
+            text-align: center;
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: $large;
+            letter-spacing: .1rem;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 30rem;
+
+        %formField {
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+
+            font-family: Verdana, sans-serif;
+            line-height: 3rem;
+            font-size: $medium;
+            letter-spacing: .1rem;
+        }
+
+        input {
+            @extend %formField;
+
+            border: .1rem solid #999;
+
+            &:first-of-type { margin-bottom: 1rem; }
+        }
+
+        button {
+            @extend %formField;
+        }
+    }
+
+    a {
+        text-decoration: initial;
+        font-family: 'Trebuchet MS', sans-serif;
+        font-size: $medium;
+        color: initial;
+    }
+}
