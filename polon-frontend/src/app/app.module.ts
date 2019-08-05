@@ -9,6 +9,7 @@ import { CustomersListComponent } from './customers-list/customers-list.componen
 import { SearchCustomersComponent } from './search-customers/search-customers.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LogInComponent } from './log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     CreateCustomerComponent,
     CustomerDetailsComponent,
     CustomersListComponent,
-    SearchCustomersComponent
+    SearchCustomersComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
