@@ -1,0 +1,16 @@
+<section>
+    <header>
+        <h3>Sign up</h3>
+    </header>
+    <form>
+        <input type = text placeholder = Username [(ngModel)] = userName>
+        <input type = password placeholder = Password [(ngModel)] = userPassword>
+        <input type = email placeholder = 'Email address' [(ngModel)] = userEmail>
+        <label>
+            <span>Birth date</span>
+            <input type = date [(ngModel)] = userBirthDate>
+        </label>
+        <button (click) = 'validation()'>Sign up</button>
+    </form>
+    <a href = "">Sign in</a>
+</section>
