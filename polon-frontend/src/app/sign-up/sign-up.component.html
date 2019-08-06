@@ -3,12 +3,12 @@
         <h3>Sign up</h3>
     </header>
     <form>
-        <input type = text placeholder = Username [(ngModel)] = userName>
-        <input type = password placeholder = Password [(ngModel)] = userPassword>
-        <input type = email placeholder = 'Email address' [(ngModel)] = userEmail>
+        <input type = text name = userName placeholder = Username [(ngModel)] = userName>
+        <input type = password name = userPassword placeholder = Password [(ngModel)] = userPassword>
+        <input type = email name = userEmail placeholder = 'Email address' [(ngModel)] = userEmail>
         <label>
             <span>Birth date</span>
-            <input type = date [(ngModel)] = userBirthDate>
+            <input type = date name = userBirthDate [(ngModel)] = userBirthDate>
         </label>
         <button (click) = 'validation()'>Sign up</button>
     </form>

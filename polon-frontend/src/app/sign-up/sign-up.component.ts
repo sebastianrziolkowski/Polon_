@@ -7,10 +7,90 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SignUpComponent implements OnInit {
+  private readonly userName: string;
+  private readonly userPassword: string;
+  private readonly userEmail: string;
+  private readonly userBirthDate: string;
 
-  constructor() { }
+  validation() {
+    class UserInput {
+      readonly input: any;
+      message: string = "";
+      error: boolean = false;
 
-  ngOnInit() {
+      constructor(userInput: any) {
+        this.input = (userInput === undefined) ? "" : userInput;
+      }
+    }
+
+    class UserInputDate extends UserInput {
+      constructor(userInput: any) {
+        super(new Date(userInput));
+      }
+    }
+
+    const Username: UserInput = new UserInput(this.userName),
+          Password: UserInput = new UserInput(this.userPassword),
+          Email: UserInput = new UserInput(this.userEmail),
+          Birth: UserInputDate = new UserInputDate(this.userBirthDate);
+
+    // Username validation
+
+    if (Username.input === "")
+      Username.message = "Username is required";
+
+    else if (Username.input.length < 5)
+      Username.message = "Username is too short";
+
+    else if (Username.input.length > 25)
+      Username.message = "Username is too long";
+
+    else if (!Username.input.match(/^[a-zA-Z]\w+$/g))
+      Username.message = "First character of username must be a letter";
+
+    // Password validation
+
+    if (Password.input === "")
+      Password.message = "Password is required";
+
+    else if (Password.input.length < 5)
+      Password.message = "Password is too short";
+
+    else if (Password.input.length > 25)
+      Password.message = "Password is too long";
+
+    // Email validation
+
+    if (Email.input === "")
+      Email.message = "Email is required";
+
+    else if (!Email.input.match(/^\S+@\S+\.\S+$/g))
+      Email.message = "This email seems to be not valid";
+
+    // Birth date validation
+
+    const today: object = new Date();
+
+    if (isNaN(Birth.input.getTime()))
+      Birth.message = "Birth date is required";
+
+    else if (Birth.input > today)
+      Birth.message = "This email seems to be not valid";
+
+    // PopUp creating
+
+    const inputs: any[] = [Username, Password, Email, Birth];
+
+    for (const input of inputs) {
+      if (input.message !== "") {
+        alert(input.message);
+        break;
+      }
+    }
   }
+
+  constructor() {}
+
+  ngOnInit() {}
 
 }
