@@ -69,17 +69,20 @@ export class SignUpComponent implements OnInit {
 
     // Birth date validation
 
-    const today: object = new Date();
+    const today: any = new Date();
 
     if (isNaN(Birth.input.getTime()))
       Birth.message = "Birth date is required";
 
     else if (Birth.input > today)
-      Birth.message = "This email seems to be not valid";
+      Birth.message = "This birth date seems to be not valid";
+
+    else if (((parseInt(today.getTime()) - parseInt(Birth.input.getTime())) / 410227200000) <= 1)
+      Birth.message = "User must be at least 13 year old";
 
     // PopUp creating
 
-    const inputs: any[] = [Username, Password, Email, Birth];
+    const inputs: UserInput[] = [Username, Password, Email, Birth];
 
     for (const input of inputs) {
       if (input.message !== "") {
