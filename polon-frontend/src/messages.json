@@ -1,0 +1,15 @@
+{
+    "empty": "{{inputType}} is required",
+    "length": {
+        "short": "This {{inputType}} is too short",
+        "long": "This {{inputType}} is too long"
+    },
+    "inputMask": {
+        "email": {
+
+        },
+        "date": {
+
+        }
+    }
+}
