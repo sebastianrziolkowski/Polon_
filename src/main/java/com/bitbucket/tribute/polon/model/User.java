@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "user")
+@Table(name = "app_user")
 public class User {
 
     @Id
@@ -19,13 +19,25 @@ public class User {
     @Column(name = "userPassword")
     private String userPassword;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "active")
     private boolean active;
 
-    public User(String nameName, String userPassword, boolean active) {
-        this.userName = nameName;
+    public User(String userName, String userPassword, String email, boolean active) {
+        this.userName = userName;
         this.userPassword = userPassword;
+        this.email = email;
         this.active = active;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setId(long id) {
