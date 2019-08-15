@@ -8,6 +8,7 @@ public class PolonApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PolonApplication.class, args);
+		
 	}
 
 }
