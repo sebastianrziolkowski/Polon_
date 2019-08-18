@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "app_user")
+@Table(name = "users")
 public class User {
 
     @Id
@@ -22,14 +22,41 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "age")
+    private int age;
+
     @Column(name = "active")
     private boolean active;
 
-    public User(String userName, String userPassword, String email, boolean active) {
+    public User(String userName, String userPassword, String email, int age, boolean active) {
         this.userName = userName;
         this.userPassword = userPassword;
         this.email = email;
+        this.age = age;
         this.active = active;
+    }
+
+    public User(){}
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", active=" + active +
+                '}';
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public void setEmail(String email) {
@@ -73,13 +100,5 @@ public class User {
     }
 
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", nameName='" + userName + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", active=" + active +
-                '}';
-    }
+
 }

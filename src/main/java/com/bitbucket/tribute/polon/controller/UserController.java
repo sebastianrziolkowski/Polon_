@@ -33,7 +33,7 @@ public class UserController {
     @PostMapping(value = "/users/create")
     public User postCustomer(@RequestBody User user) {
 
-        return repository.save(new User(user.getUserName(), user.getUserPassword(),user.getEmail(), user.isActive()));
+        return repository.save(new User(user.getUserName(), user.getUserPassword(),user.getEmail(), user.getAge(), user.isActive()));
     }
 
     @DeleteMapping("/users/{id}")
