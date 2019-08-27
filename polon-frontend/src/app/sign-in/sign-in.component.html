@@ -1,11 +1,11 @@
 <section>
     <header>
-        <h3>{{subTitle}}</h3>
+        <h3>{{labels.signIn}}</h3>
     </header>
-    <form>
-        <input type = text name = userName placeholder = {{usernamePlaceholder}} [(ngModel)] = userName>
-        <input type = password name = userPassword placeholder = {{passwordPlaceholder}} [(ngModel)] = userPassword>
-        <button>{{buttonLabel}}</button>
+    <form [formGroup] = signInForm (ngSubmit) = submit($event)>
+        <input type = text formControlName = userName placeholder = {{labels.userInputUserName}}>
+        <input type = password formControlName = userPassword placeholder = {{labels.userInputPassword}}>
+        <button type = submit>{{labels.signIn}}</button>
     </form>
-    <a href = "">{{anchorLabel}}</a>
+    <a href = signUp>{{labels.signUp}}</a>
 </section>

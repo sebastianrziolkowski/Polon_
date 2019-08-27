@@ -13,7 +13,7 @@ export class SignUpComponent implements OnInit {
   private readonly userPasswordConfirm: string;
   private readonly userEmail: string;
   private readonly userBirthDate: string;
-
+/*
   private readonly subTitle: string = labels.title.signUp;
   private readonly usernamePlaceholder: string = labels.userInputPlaceholder.username;
   private readonly passwordPlaceholder: string = labels.userInputPlaceholder.password;
@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
   private readonly birthPlaceholder: string = labels.userInputPlaceholder.birth;
   private readonly buttonLabel: string = labels.title.signUp;
   private readonly anchorLabel: string = labels.title.signIn;
-
+*/
   constructor() {}
 
   ngOnInit() {}

@@ -1,15 +1,9 @@
 {
-    "userInputPlaceholder": {
-        "name": "Name",
-        "surname": "Surname",
-        "email": "Email address",
-        "birth": "Birth date",
-        "username": "Username",
-        "password": "Password",
-        "confirmPassword": "Confirm password"
-    },
-    "title": {
-        "signIn": "Sign in",
-        "signUp": "Sign up"
-    }
+    "userInputUserName": "Username",
+    "userInputPassword": "Password",
+    "userInputConfirmPassword": "Confirm password",
+    "userInputEmail": "Email address",
+    "userInputBirth": "Birth date",
+    "signIn": "Sign in",
+    "signUp": "Sign up"
 }

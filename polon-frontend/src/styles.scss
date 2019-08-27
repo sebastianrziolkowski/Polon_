@@ -40,7 +40,7 @@ section {
         width: 30rem;
 
         %formField {
-            margin-bottom: 2rem;
+            margin-top: 1.5rem;
             padding: 0 1rem;
 
             font-family: Verdana, sans-serif;
@@ -54,11 +54,25 @@ section {
 
             border: .1rem solid #999;
 
-            &:first-of-type { margin-bottom: 1rem; }
+            &:first-of-type { margin-top: initial; }
+        }
+
+        div {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+
+            span {
+                font-family: 'Trebuchet MS', sans-serif;
+                font-size: $small;
+                color: red;
+            }
         }
 
         button {
             @extend %formField;
+
+            margin-bottom: 1.5rem;
         }
     }
 

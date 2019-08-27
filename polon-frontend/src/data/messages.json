@@ -1,3 +1,10 @@
 {
+    "noUserNameInput": "Username is required",
+    "wrongUsernamePatternInput": "First character of username must be a letter",
+    "tooShortUserNameInput": "Username is too short",
+    "tooLongUserNameInput": "Username is too long",
 
+    "noPasswordInput": "Password is required",
+    "tooShortPasswordInput": "Password is too short",
+    "tooLongPasswordInput": "Password is too long"
 }
