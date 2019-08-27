@@ -1,0 +1,37 @@
+<section>
+    <header>
+        <h3>{{labels.signUp}}</h3>
+    </header>
+    <form [formGroup] = signUpForm>
+        <input type = text formControlName = userName placeholder = {{labels.userInputUserName}}>
+        <div *ngIf = 'userName.invalid && (userName.touched || userName.dirty)'>
+            <span *ngIf = 'userName.errors.required'>{{messages.noUserNameInput}}</span>
+            <span *ngIf = 'userName.errors.minlength'>{{messages.tooShortUserNameInput}}</span>
+            <span *ngIf = 'userName.errors.maxlength'>{{messages.tooLongUserNameInput}}</span>
+        </div>
+        <input type = password formControlName = userPassword placeholder = {{labels.userInputPassword}}>
+        <div *ngIf = 'userPassword.invalid && (userPassword.touched || userPassword.dirty)'>
+            <span *ngIf = 'userPassword.errors.required'>{{messages.noPasswordInput}}</span>
+            <span *ngIf = 'userPassword.errors.minlength'>{{messages.tooShortPasswordInput}}</span>
+            <span *ngIf = 'userPassword.errors.maxlength'>{{messages.tooLongPasswordInput}}</span>
+        </div>
+        <input type = password formControlName = userPasswordConfirm placeholder = {{labels.userInputConfirmPassword}}>
+        <div *ngIf = 'userPasswordConfirm.invalid && (userPasswordConfirm.touched || userPasswordConfirm.dirty)'>
+            <span *ngIf = 'userPasswordConfirm.errors.required'>{{messages.noPasswordConfirmInput}}</span>
+        </div>
+        <input type = email formControlName = userEmail placeholder = {{labels.userInputEmail}}>
+        <div *ngIf = 'userEmail.invalid && (userEmail.touched || userEmail.dirty)'>
+            <span *ngIf = 'userEmail.errors.required'>{{messages.noEmailInput}}</span>
+            <span *ngIf = 'userEmail.errors.pattern'>{{messages.wrongEmailPatternInput}}</span>
+        </div>
+        <label>
+            <span>{{labels.userInputBirth}}</span>
+            <input type = date formControlName = userBirthDate>
+        </label>
+        <div *ngIf = 'userBirthDate.invalid && (userBirthDate.touched || userBirthDate.dirty)'>
+            <span *ngIf = 'userBirthDate.errors.required'>{{messages.noBirthDateInput}}</span>
+        </div>
+        <button type = submit [disabled] = signUpForm.invalid>{{labels.signUp}}</button>
+    </form>
+    <a href = ''>{{labels.signIn}}</a>
+</section>
