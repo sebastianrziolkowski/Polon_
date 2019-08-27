@@ -1,8 +1,12 @@
 @import '../../data/variables';
 
-section form {
+form {
     input {
         margin-bottom: 1rem;
+    }
+
+    div {
+        margin-top: .5rem;
     }
 
     label {
@@ -10,11 +14,11 @@ section form {
         flex-direction: column;
 
         span {
+            margin-top: 1rem;
+
             font-family: 'Trebuchet MS', sans-serif;
             font-size: $medium;
             line-height: 3rem;
         }
-
-        input { margin-bottom: 2rem; }
     }
 }

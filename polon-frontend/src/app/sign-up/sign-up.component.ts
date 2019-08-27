@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import labels from '../../data/labels.json';
+import messages from '../../data/messages.json';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,23 +11,39 @@ import labels from '../../data/labels.json';
 })
 
 export class SignUpComponent implements OnInit {
-  private readonly userName: string;
-  private readonly userPassword: string;
-  private readonly userPasswordConfirm: string;
-  private readonly userEmail: string;
-  private readonly userBirthDate: string;
-/*
-  private readonly subTitle: string = labels.title.signUp;
-  private readonly usernamePlaceholder: string = labels.userInputPlaceholder.username;
-  private readonly passwordPlaceholder: string = labels.userInputPlaceholder.password;
-  private readonly passwordConfirmPlaceholder: string = labels.userInputPlaceholder.confirmPassword;
-  private readonly emailPlaceholder: string = labels.userInputPlaceholder.email;
-  private readonly birthPlaceholder: string = labels.userInputPlaceholder.birth;
-  private readonly buttonLabel: string = labels.title.signUp;
-  private readonly anchorLabel: string = labels.title.signIn;
-*/
-  constructor() {}
+  private readonly labels: Object = labels;
+  private readonly messages: Object = messages;
 
-  ngOnInit() {}
+  private signUpForm: FormGroup;
 
+  ngOnInit() {
+    this.signUpForm = new FormGroup({
+      userName: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(25),
+      ]),
+      userPassword: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(25),
+      ]),
+      userPasswordConfirm: new FormControl(null, [
+        Validators.required,
+      ]),
+      userEmail: new FormControl(null, [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
+      ]),
+      userBirthDate: new FormControl(null, [
+        Validators.required,
+      ]),
+    });
+  };
+
+  get userName() { return this.signUpForm.controls.userName; };
+  get userPassword() { return this.signUpForm.controls.userPassword; };
+  get userPasswordConfirm() { return this.signUpForm.controls.userPasswordConfirm; };
+  get userEmail() { return this.signUpForm.controls.userEmail; };
+  get userBirthDate() { return this.signUpForm.controls.userBirthDate; };
 }

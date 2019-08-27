@@ -1,10 +1,17 @@
 {
     "noUserNameInput": "Username is required",
-    "wrongUsernamePatternInput": "First character of username must be a letter",
+    "wrongUserNamePatternInput": "First character of username must be a letter",
     "tooShortUserNameInput": "Username is too short",
     "tooLongUserNameInput": "Username is too long",
 
     "noPasswordInput": "Password is required",
     "tooShortPasswordInput": "Password is too short",
-    "tooLongPasswordInput": "Password is too long"
+    "tooLongPasswordInput": "Password is too long",
+
+    "noPasswordConfirmInput": "Password confirm is required",
+
+    "noEmailInput": "Email is required",
+    "wrongEmailPatternInput": "Email do not match",
+
+    "noBirthDateInput": "Birth date is required"
 }

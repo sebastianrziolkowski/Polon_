@@ -35,15 +35,13 @@ export class SignInComponent implements OnInit {
   get userName() { return this.signInForm.controls.userName; };
   get userPassword() { return this.signInForm.controls.userPassword; };
 
-  submit($event) {
-    $event.stopImmediatePropagation();
-
+  submit() {
     if (this.signInForm.invalid) {
       let message: string;
 
       if (this.userName.errors) {
         if (this.userName.errors.required) message = messages.noUserNameInput;
-        else if (!Boolean(this.userName.value.charAt(0).match(/^[a-zA-z]$/))) message = messages.wrongUsernamePatternInput;
+        else if (!Boolean(this.userName.value.charAt(0).match(/^[a-zA-z]$/))) message = messages.wrongUserNamePatternInput;
         else if (this.userName.errors.minlength) message = messages.tooShortUserNameInput;
         else if (this.userName.errors.maxlength) message = messages.tooLongUserNameInput;
       }

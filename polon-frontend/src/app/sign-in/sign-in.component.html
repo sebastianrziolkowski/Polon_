@@ -2,10 +2,10 @@
     <header>
         <h3>{{labels.signIn}}</h3>
     </header>
-    <form [formGroup] = signInForm (ngSubmit) = submit($event)>
+    <form [formGroup] = signInForm (ngSubmit) = submit()>
         <input type = text formControlName = userName placeholder = {{labels.userInputUserName}}>
         <input type = password formControlName = userPassword placeholder = {{labels.userInputPassword}}>
         <button type = submit>{{labels.signIn}}</button>
     </form>
-    <a href = signUp>{{labels.signUp}}</a>
+    <a href = ''>{{labels.signUp}}</a>
 </section>
