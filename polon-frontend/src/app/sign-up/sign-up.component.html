@@ -21,7 +21,7 @@
         </div>
         <input type = email formControlName = userEmail placeholder = {{labels.userInputEmail}}>
         <div *ngIf = 'userEmail.invalid && (userEmail.touched || userEmail.dirty)'>
-            <span *ngIf = 'userEmail.errors.required'>{{messages.noEmailInput}}</span>
+            <span *ngIf = 'userEmail.errors.resquired'>{{messages.noEmailInput}}</span>
             <span *ngIf = 'userEmail.errors.pattern'>{{messages.wrongEmailPatternInput}}</span>
         </div>
         <label>
