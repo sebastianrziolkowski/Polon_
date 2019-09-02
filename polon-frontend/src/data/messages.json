@@ -1,4 +1,7 @@
 {
+    "noUserIdInput": "ID is required",
+    "negativeUserId": "ID must be positive",
+
     "noUserNameInput": "Username is required",
     "wrongUserNamePatternInput": "First character of username must be a letter",
     "tooShortUserNameInput": "Username is too short",

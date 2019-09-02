@@ -34,7 +34,7 @@ describe('SignInComponent', () => {
   });
 
   it('should contain valid placeholders', () => {
-    expect(De.query(By.css('input[formControlName = userName]')).nativeElement.placeholder).toBe('Username');
+    expect(De.query(By.css('input[formControlName = userId]')).nativeElement.placeholder).toBe('Index');
     expect(De.query(By.css('input[formControlName = userPassword]')).nativeElement.placeholder).toBe('Password');
   });
 

@@ -18,11 +18,9 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.signInForm = new FormGroup({
-      userName: new FormControl(null, [
+      userId: new FormControl(null, [
         Validators.required,
-        //Validators.pattern('^[a-zA-Z]\w+$'),
-        Validators.minLength(5),
-        Validators.maxLength(25),
+        Validators.min(0),
       ]),
       userPassword: new FormControl(null, [
         Validators.required,
@@ -32,18 +30,16 @@ export class SignInComponent implements OnInit {
     });
   };
 
-  get userName() { return this.signInForm.controls.userName; };
+  get userId() { return this.signInForm.controls.userId; };
   get userPassword() { return this.signInForm.controls.userPassword; };
 
   submit() {
     if (this.signInForm.invalid) {
       let message: string;
 
-      if (this.userName.errors) {
-        if (this.userName.errors.required) message = messages.noUserNameInput;
-        else if (!Boolean(this.userName.value.charAt(0).match(/^[a-zA-z]$/))) message = messages.wrongUserNamePatternInput;
-        else if (this.userName.errors.minlength) message = messages.tooShortUserNameInput;
-        else if (this.userName.errors.maxlength) message = messages.tooLongUserNameInput;
+      if (this.userId.errors) {
+        if (this.userId.errors.required) message = messages.noUserIdInput;
+        else if (this.userId.errors.min) message = messages.negativeUserId;
       }
 
       else if (this.userPassword.errors) {
