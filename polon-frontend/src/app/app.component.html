@@ -1,10 +1,10 @@
-<div>
-  <h1>{{title}}</h1>
-  <h2>{{description}}</h2>
+<aside>
   <nav>
-    <a routerLink = signin routerLinkActive = active>Log in</a>
-    <a routerLink = signup routerLinkActive = active>Sign up</a>
-    <a routerLink = userslist routerLinkActive = active>Users list</a>
+    <a *ngIf = userService.isSignedIn() routerLink = home routerLinkActive = active>Home</a>
+    <a *ngIf = !userService.isSignedIn() routerLink = signin routerLinkActive = active>Sign in</a>
+    <a *ngIf = userService.isSignedIn() (click) = userService.signOut()>Sign out</a>
   </nav>
+</aside>
+<main>
   <router-outlet></router-outlet>
-</div>
+</main>

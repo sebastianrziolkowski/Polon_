@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { UserService } from '../user/user.service';
 import labels from '../../data/labels.json';
 import messages from '../../data/messages.json';
 
@@ -15,6 +16,8 @@ export class SignInComponent implements OnInit {
   private readonly messages: Object = messages;
 
   private signInForm: FormGroup;
+
+  constructor(private readonly userService: UserService) {}
 
   ngOnInit() {
     this.signInForm = new FormGroup({
@@ -50,5 +53,7 @@ export class SignInComponent implements OnInit {
 
       alert(message);
     }
+
+    else this.userService.signIn(this.userId.value, this.userPassword.value);
   }
 };
